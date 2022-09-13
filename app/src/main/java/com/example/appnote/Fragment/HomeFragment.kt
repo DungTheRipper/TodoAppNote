@@ -39,9 +39,9 @@ class HomeFragment : Fragment() {
     private fun initAdapter() {
         context?.let {
             notes = NoteDatabase.getDatabase(it).getNoteDao().getAllNotes()
-            notes.forEach{
-                Log.e("in",it.toString())
-            }
+//            notes.forEach{
+//                Log.e("in",it.toString())
+//            }
         }
         adapter = NoteAdapter(notes)
         adapter.onClickListener(onClick)
