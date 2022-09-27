@@ -41,6 +41,10 @@
 * Lưu lại lịch sử chỉnh sửa note 
 * ....
 
+# Các kiến thức đã áp dụng vào để làm được app
+* Room Database
+* Recyclerview, Searchview
+* Navigation (navigation graph, bottom navigation)
 
 
 
