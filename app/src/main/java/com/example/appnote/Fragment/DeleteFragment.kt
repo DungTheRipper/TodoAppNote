@@ -57,7 +57,6 @@ class DeleteFragment : Fragment() {
     private val onClick = object : NoteAdapter.NoteListener {
         override fun onNoteClicked(note: Note) {
             val bundle = Bundle()
-            Log.e("position", note.id.toString() )
             bundle.putInt("id", note.id!!)
             bundle.putString("type","restoreNote")
             findNavController().navigate(R.id.action_deleteFragment_to_createNoteFragment, bundle)

@@ -12,46 +12,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_sort"
         app:title="@string/my_notes"
-        app:titleTextColor="#FFFFFF"
         app:titleTextAppearance="@style/Toolbar.TitleText"
-        android:backgroundTint="@color/white" />
-
-    <LinearLayout
-        android:id="@+id/layoutSearch"
+        app:titleTextColor="#FFFFFF" />
+    <android.widget.SearchView
+        android:id="@+id/svSearch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/background_search"
-        android:gravity="center_vertical"
-        app:layout_constraintTop_toBottomOf="@id/toolBar">
-
-        <ImageView
-            android:id="@+id/ivSearch"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_search"
-            app:tint="#DBDBDB" />
-
-        <EditText
-            android:id="@+id/etSearch"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:background="@null"
-            android:hint="@string/search_notes"
-            android:importantForAutofill="no"
-            android:inputType="text"
-            android:paddingStart="20dp"
-            android:textColor="@color/white"
-            android:textColorHint="#7B7B7B"
-            android:textSize="18sp"
-            tools:ignore="RtlSymmetry" />
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@id/toolBar"
+        app:queryHint="@string/search_notes"
+        app:iconifiedByDefault="false"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleViewNotes"
@@ -61,7 +37,7 @@
         android:padding="10dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutSearch" />
+        app:layout_constraintTop_toBottomOf="@id/svSearch" />
 
     <ImageView
         android:id="@+id/ivAdd"

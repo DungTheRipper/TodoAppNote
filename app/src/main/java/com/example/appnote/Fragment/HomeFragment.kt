@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.appnote.Adapter.NoteAdapter
@@ -33,6 +34,29 @@ class HomeFragment : Fragment() {
         initAdapter()
         setClickListeners()
         selectionSort()
+        searchTextListener()
+    }
+
+    private fun searchTextListener() {
+        binding.svSearch.clearFocus()
+        val svObject = object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                filterListNote(newText)
+                return false
+            }
+        }
+        binding.svSearch.setOnQueryTextListener(svObject)
+    }
+
+    private fun filterListNote(newText : String){
+        val  filteredListNote =  notesHome.filter { it.title!!.contains(newText) }
+        adapter = NoteAdapter(filteredListNote)
+        adapter.onClickListener(onClick)
+        binding.recycleViewNotes.adapter = adapter
     }
 
     private fun selectionSort() {
@@ -64,7 +88,6 @@ class HomeFragment : Fragment() {
         }
         notesHome = mutableListOf()
         notes.forEach{
-            Log.e("notes", it.toString() )
             if(it.status==1){
                 notesHome.add(it)
             }
@@ -81,7 +104,6 @@ class HomeFragment : Fragment() {
     private val onClick = object : NoteAdapter.NoteListener {
         override fun onNoteClicked(note: Note) {
             val bundle = Bundle()
-            Log.e("position", note.id.toString() )
             bundle.putInt("id", note.id!!)
             bundle.putString("type","editNote")
             findNavController().navigate(R.id.action_homeFragment_to_createNoteFragment, bundle)
