@@ -31,3 +31,18 @@
 
 ![image](https://user-images.githubusercontent.com/92314383/192520371-6edd2139-d8a0-4e13-9129-090dcdc77063.png)
 
+* Ngoải ra, ta có thể tìm kiếm theo tiêu đề bằng cách bấn vào biểu tượng kính lúp ở thanh tìm kiếm và nhập tên muốn tìm vào
+
+![image](https://user-images.githubusercontent.com/92314383/192529849-a47c6c08-8631-48aa-ae62-6947ca82ed43.png)
+
+# Các tính năng trong tương lai
+* Chọn màu sắc cho note để có thể xem mức độ ưu tiên công việc
+* Thông báo khi đến thời hạn đặt ra
+* Lưu lại lịch sử chỉnh sửa note 
+* ....
+
+
+
+
+
+
