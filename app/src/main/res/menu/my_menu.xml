@@ -5,10 +5,6 @@
         android:icon="@drawable/ic_baseline_home_24"
         android:title="@string/home" />
     <item
-        android:id="@+id/historyFragment"
-        android:icon="@drawable/ic_baseline_history_24"
-        android:title="@string/history_menu" />
-    <item
         android:id="@+id/deleteFragment"
         android:icon="@drawable/ic_baseline_delete_24"
         android:title="@string/delete_menu" />

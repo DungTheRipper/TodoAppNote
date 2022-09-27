@@ -4,32 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#292929"
+    android:background="#000000"
     tools:context=".Fragment.CreateNoteFragment">
 
     <ImageView
         android:id="@+id/ivBack"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
+        android:background="@drawable/background_button"
         android:contentDescription="@string/app_name"
+        android:padding="5dp"
         android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="#DBDBDB" />
+        app:tint="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/background_button"
+        android:contentDescription="@string/app_name"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_delete_24"
+        app:layout_constraintEnd_toStartOf="@+id/ivDone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/ivRestore"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/background_button"
+        android:contentDescription="@string/app_name"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_history_24"
+        app:layout_constraintEnd_toStartOf="@+id/ivDelete"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#FFFFFF" />
 
     <ImageView
         android:id="@+id/ivDone"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="30dp"
+        android:background="@drawable/background_button"
         android:contentDescription="@string/app_name"
+        android:padding="5dp"
         android:src="@drawable/ic_done"
         app:layout_constraintBottom_toBottomOf="@id/ivBack"
         app:layout_constraintEnd_toEndOf="parent"
-        app:tint="#DBDBDB" />
+        app:tint="#FFFFFF" />
 
     <EditText
         android:id="@+id/etTitle"
@@ -55,7 +89,64 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@id/etTitle"
         app:layout_constraintStart_toStartOf="@id/etTitle"
-        app:layout_constraintTop_toBottomOf="@id/etTitle"/>
+        app:layout_constraintTop_toBottomOf="@id/etTitle" />
+
+    <ImageView
+        android:id="@+id/ivTimePicker"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_button"
+        android:contentDescription="@string/app_name"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_timer_24"
+        app:layout_constraintBottom_toTopOf="@+id/ivDatePicker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTime"
+        app:tint="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tvTimePicker"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:textColor="#A4A4A4"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivTimePicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivTimePicker"
+        app:layout_constraintTop_toTopOf="@id/ivTimePicker"
+        tools:text="20h" />
+
+    <ImageView
+        android:id="@+id/ivDatePicker"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_button"
+        android:contentDescription="@string/app_name"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_edit_calendar_24"
+        app:layout_constraintBottom_toTopOf="@id/etDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivTimePicker"
+        app:tint="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tvDatePicker"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:textColor="#A4A4A4"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivDatePicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivDatePicker"
+        app:layout_constraintTop_toTopOf="@id/ivDatePicker" />
 
     <EditText
         android:id="@+id/etDescription"
@@ -73,6 +164,6 @@
         android:textColor="@color/white"
         android:textColorHint="#7B7B7B"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/tvTime" />
+        app:layout_constraintTop_toBottomOf="@id/ivDatePicker" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,7 +29,7 @@ class NoteAdapter(private val notes: List<Note>,private var noteListener: NoteLi
         holder.tvTitle.text = note.title
         holder.tvTime.text = note.time
         holder.layoutNote.setOnClickListener{
-            noteListener!!.onNoteClicked(position)
+            noteListener!!.onNoteClicked(note)
         }
     }
 
@@ -41,7 +41,7 @@ class NoteAdapter(private val notes: List<Note>,private var noteListener: NoteLi
     }
 
     interface NoteListener {
-        fun onNoteClicked(position: Int)
+        fun onNoteClicked(note: Note)
     }
 
     fun onClickListener(listener: NoteListener) {

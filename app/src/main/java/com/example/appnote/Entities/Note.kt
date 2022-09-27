@@ -19,6 +19,12 @@ class Note : Serializable {
     @ColumnInfo(name = "time")
     var time: String? = null
 
+    @ColumnInfo(name = "timePicker")
+    var timePicker: String? = null
+
+    @ColumnInfo(name = "datePicker")
+    var datePicker: String? = null
+
     @ColumnInfo(name = "color")
     var color: String? = null
 

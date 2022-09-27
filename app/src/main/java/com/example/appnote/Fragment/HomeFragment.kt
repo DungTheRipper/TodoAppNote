@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.appnote.Adapter.NoteAdapter
-import com.example.appnote.Dao.NoteDao
 import com.example.appnote.Database.NoteDatabase
 import com.example.appnote.Entities.Note
 import com.example.appnote.R
@@ -19,7 +18,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var adapter: NoteAdapter
     private lateinit var notes: List<Note>
-    private var noteClickedPosition: Int = -1
+    private lateinit var notesHome: MutableList<Note>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,11 +38,15 @@ class HomeFragment : Fragment() {
     private fun initAdapter() {
         context?.let {
             notes = NoteDatabase.getDatabase(it).getNoteDao().getAllNotes()
-//            notes.forEach{
-//                Log.e("in",it.toString())
-//            }
         }
-        adapter = NoteAdapter(notes)
+        notesHome = mutableListOf()
+        notes.forEach{
+            Log.e("notes", it.toString() )
+            if(it.status==1){
+                notesHome.add(it)
+            }
+        }
+        adapter = NoteAdapter(notesHome)
         adapter.onClickListener(onClick)
         binding.apply {
             recycleViewNotes.layoutManager = GridLayoutManager(context, 1)
@@ -53,10 +56,10 @@ class HomeFragment : Fragment() {
     }
 
     private val onClick = object : NoteAdapter.NoteListener {
-        override fun onNoteClicked(position: Int) {
-            noteClickedPosition = position
+        override fun onNoteClicked(note: Note) {
             val bundle = Bundle()
-            bundle.putInt("id", position+1)
+            Log.e("position", note.id.toString() )
+            bundle.putInt("id", note.id!!)
             bundle.putString("type","editNote")
             findNavController().navigate(R.id.action_homeFragment_to_createNoteFragment, bundle)
         }

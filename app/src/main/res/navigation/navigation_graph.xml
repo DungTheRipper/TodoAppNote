@@ -21,15 +21,17 @@
         <action
             android:id="@+id/action_createNoteFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_createNoteFragment_to_deleteFragment"
+            app:destination="@id/deleteFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/historyFragment"
-        android:name="com.example.appnote.Fragment.HistoryFragment"
-        android:label="fragment_history"
-        tools:layout="@layout/fragment_history" />
     <fragment
         android:id="@+id/deleteFragment"
         android:name="com.example.appnote.Fragment.DeleteFragment"
         android:label="fragment_delete"
-        tools:layout="@layout/fragment_delete" />
+        tools:layout="@layout/fragment_delete" >
+        <action
+            android:id="@+id/action_deleteFragment_to_createNoteFragment"
+            app:destination="@id/createNoteFragment" />
+    </fragment>
 </navigation>
