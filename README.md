@@ -1,7 +1,7 @@
 # TodoAppNote
 * App gồm các chức năng như: tạo mới một note, sửa, xóa note, sắp xếp theo tiêu đề hoặc là theo ngày tạo, tìm kiếm note dựa theo tiêu đề
 
-![image](https://user-images.githubusercontent.com/92314383/192519104-b7db0995-0f23-4c87-bb90-45944347dd39.png)
+# ![image](https://user-images.githubusercontent.com/92314383/192519104-b7db0995-0f23-4c87-bb90-45944347dd39.png)
 
 * Khi bấm vào biểu tượng dấu (+) ở góc dưới bên phải, ta sẽ có thể tạo một note mới bao gồm tiêu đề, ghi chú và thời gian
 
