@@ -21,4 +21,6 @@
     <string name="home">Home</string>
     <string name="history_menu">History</string>
     <string name="delete_menu">Delete</string>
+    <string name="sort_by_title">Sort by title</string>
+    <string name="sort_by_date">Sort by date</string>
 </resources>

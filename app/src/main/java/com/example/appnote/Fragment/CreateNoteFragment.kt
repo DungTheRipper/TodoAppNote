@@ -36,6 +36,7 @@ class CreateNoteFragment : Fragment() {
     private fun hideButton() {
         if (type == "restoreNote") {
             binding.ivRestore.visibility = View.VISIBLE
+            binding.ivDone.visibility = View.GONE
         } else {
             binding.ivRestore.visibility = View.GONE
         }
@@ -69,14 +70,15 @@ class CreateNoteFragment : Fragment() {
         binding.ivDatePicker.setOnClickListener {
             setDatePicker()
         }
-        binding.ivTimePicker.setOnClickListener{
+        binding.ivTimePicker.setOnClickListener {
             setTimePicker()
         }
         binding.ivRestore.setOnClickListener {
             restoreNote()
         }
         binding.ivBack.setOnClickListener {
-            findNavController().navigate(R.id.action_createNoteFragment_to_homeFragment)
+            if (type == "restoreNote") findNavController().navigate(R.id.action_createNoteFragment_to_deleteFragment)
+            else findNavController().navigate(R.id.action_createNoteFragment_to_homeFragment)
         }
         binding.ivDelete.setOnClickListener {
             deleteNote()
@@ -99,7 +101,7 @@ class CreateNoteFragment : Fragment() {
         val timeListener =
             TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
                 calendar.set(Calendar.HOUR_OF_DAY, hourOfDay)
-                calendar.set(Calendar.MINUTE,minute)
+                calendar.set(Calendar.MINUTE, minute)
                 binding.tvTimePicker.text =
                     SimpleDateFormat("HH:mm a", Locale.US).format(calendar.time)
             }
@@ -135,10 +137,6 @@ class CreateNoteFragment : Fragment() {
     }
 
     private fun restoreNote() {
-        binding.tvTime.text =
-            SimpleDateFormat("EEEE, dd MMMM yyyy HH:mm a", Locale.getDefault()).format(
-                Date()
-            )
         if (binding.etTitle.text.isNullOrEmpty()) {
             "Note title can't be empty!".notification()
         } else if (binding.etDescription.text.isNullOrEmpty()) {
@@ -149,7 +147,6 @@ class CreateNoteFragment : Fragment() {
                     noteEdit.title = etTitle.text.toString()
                     noteEdit.description = etDescription.text.toString()
                     noteEdit.color = colorChoice
-                    noteEdit.time = tvTime.text.toString()
                     noteEdit.timePicker = tvTimePicker.text.toString()
                     noteEdit.datePicker = tvDatePicker.text.toString()
                     noteEdit.status = 1
@@ -224,6 +221,10 @@ class CreateNoteFragment : Fragment() {
             "Note title can't be empty!".notification()
         } else if (binding.etDescription.text.isNullOrEmpty()) {
             "Note description can't be empty!".notification()
+        } else if (binding.tvTimePicker.text.isNullOrEmpty()) {
+            "Please choose a time".notification()
+        } else if (binding.tvDatePicker.text.isNullOrEmpty()) {
+            "Please choose a date!".notification()
         } else {
             context?.let {
                 val note = Note()

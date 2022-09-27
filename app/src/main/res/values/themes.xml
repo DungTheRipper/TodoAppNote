@@ -16,6 +16,10 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">25sp</item>
+    </style>
+
     <style name="Theme.AppNote.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

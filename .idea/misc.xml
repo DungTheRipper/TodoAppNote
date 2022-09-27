@@ -22,6 +22,14 @@
         <entry key="..\:/Users/admin/AndroidStudioProjects/AppNote/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/AppNote/app/src/main/res/layout/item_note.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/AppNote/app/src/main/res/menu/my_menu.xml" value="0.253125" />
+        <entry key="..\:/clb/Kotlin/AppNote/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.154" />
+        <entry key="..\:/clb/Kotlin/AppNote/app/src/main/res/drawable/ic_search.xml" value="0.154" />
+        <entry key="..\:/clb/Kotlin/AppNote/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/clb/Kotlin/AppNote/app/src/main/res/layout/fragment_create_note.xml" value="0.22826086956521738" />
+        <entry key="..\:/clb/Kotlin/AppNote/app/src/main/res/layout/fragment_delete.xml" value="0.22826086956521738" />
+        <entry key="..\:/clb/Kotlin/AppNote/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/clb/Kotlin/AppNote/app/src/main/res/menu/menu_sort.xml" value="0.253125" />
+        <entry key="..\:/clb/Kotlin/AppNote/app/src/main/res/menu/my_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

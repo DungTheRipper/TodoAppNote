@@ -7,28 +7,27 @@
     android:background="#292929"
     tools:context=".Fragment.HomeFragment">
 
-    <TextView
-        android:id="@+id/tvMyNotes"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="15dp"
-        android:text="@string/my_notes"
-        android:textColor="#FFFFFF"
-        android:textSize="25sp"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_sort"
+        app:title="@string/my_notes"
+        app:titleTextColor="#FFFFFF"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        android:backgroundTint="@color/white" />
 
     <LinearLayout
         android:id="@+id/layoutSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/background_search"
         android:gravity="center_vertical"
-        app:layout_constraintTop_toBottomOf="@id/tvMyNotes">
+        app:layout_constraintTop_toBottomOf="@id/toolBar">
 
         <ImageView
             android:id="@+id/ivSearch"

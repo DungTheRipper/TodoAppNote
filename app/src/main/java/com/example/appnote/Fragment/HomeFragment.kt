@@ -32,7 +32,30 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
         setClickListeners()
+        selectionSort()
+    }
 
+    private fun selectionSort() {
+        binding.toolBar.setOnMenuItemClickListener{menu->
+            when(menu.itemId){
+                R.id.sortByTitle -> {
+                    notesHome.sortBy { it.title }
+                    adapter = NoteAdapter(notesHome)
+                    binding.recycleViewNotes.adapter = adapter
+                    adapter.onClickListener(onClick)
+                    true
+                }
+                R.id.sortByDate ->{
+                    notesHome.sortBy { it.time }
+                    adapter = NoteAdapter(notesHome)
+                    binding.recycleViewNotes.adapter = adapter
+                    adapter.onClickListener(onClick)
+                    true
+                }
+                else -> false
+            }
+
+        }
     }
 
     private fun initAdapter() {
@@ -70,6 +93,5 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_createNoteFragment)
         }
     }
-
 
 }
